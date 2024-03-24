@@ -67,3 +67,6 @@
         - $\Theta$(Big-Theta)표기  
         
 
+```java
+int a[] = {0, 1,3}
+```
