@@ -108,6 +108,90 @@
 4. [카드2](https://www.acmicpc.net/problem/2164)
 
 # 03. 순환/덱
+## 덱
+<img src="img/6_deque.png" />
+
+### 덱이란?
+앞으로도 뒤로도 넣을 수 있고, 앞으로도 뒤로도 뺄 수 있는 자료구조
+### 덱의 특징
+* 큐/스택과 다르게 양방향으로 넣고 뺄 수있다.
+* 문서편집 프로그램의 작업을 추가하고 제거함으로써  Undo/Redo 기능을 구현할 수 있음 
+* 중간데이터 삽입/삭제가 용이하지 않다.
+### 연산
+* addFirst(): 덱의 가장 앞부분에 추가
+* addLast(item): 덱의 가장 마지막 부분에 추가
+* removeFirst(): 덱의 가장 첫번째 원소 제거
+* removeLast(): 덱의 가장 마지막 원소 제거 
+* isEmpty(): 덱이 비었는지확인
+* getFirst(): 덱의 첫번째 원소 반환
+* getLast(): 덱의 마지막 원소 반환
+
+### 실습
+1. 덱의 연산을 구현하라
+2. 덱을 리스트리스트를 구현하라
+
+### 관련 문제(스택/큐/덱 포함)
+1. [덱](https://www.acmicpc.net/problem/10866)
+2. [덱2](https://www.acmicpc.net/problem/28279)
+3. [요새푸스 문제](https://www.acmicpc.net/problem/1158)
+4. [카드정렬하기](https://www.acmicpc.net/problem/1715)
+5. [같은숫자는싫어](https://school.programmers.co.kr/learn/courses/30/lessons/12906)
+6. [기능개발](https://school.programmers.co.kr/learn/courses/30/lessons/42586)
+7. [올바른괄호](https://school.programmers.co.kr/learn/courses/30/lessons/12909)
+8. [프로세스](https://school.programmers.co.kr/learn/courses/30/lessons/42587)
+9. [다리를지나는트럭](https://school.programmers.co.kr/learn/courses/30/lessons/42583)
+10. [주식가격](https://school.programmers.co.kr/learn/courses/30/lessons/42584)
+
+## 순환/재귀(Recursion)
+<img src="img/7_recurse.png" />
+
+### 순환/재귀(Recursion)이란?
+재귀함수(재귀호출)이라고 부름, 알고리즘에서 함수가 수행도중 자기자신을 다시호출하여 문제를 해결하는 기법
+
+### 재귀 함수의 예제
+* 피보나치 순환식 코드 예제 수열
+    * 0, 1, 1, 2, 3, 5, 7 로 이전값과 현재값을 더해서 다음값을 도출하는 수열을 말함
+    * $fibo(n) = \begin{cases} 0 & n=0 \\ 1 & n=1\\ fibo(n-2)  + fibo(n-1) & otherwise\end{cases} $
+    * 코드
+        ```python
+        def fibo(n){
+            if n == 0:
+                return 0
+            if n == 1:
+                return 1
+            return fibo(n-1) + fibo(n-2)
+        }
+        ```
+    * 실행 과정
+
+        <img src="img/8_fibo.png" />
+* 참고) 피보나치 수열 반복시코드 예제
+    * 코드
+        ```python
+        def fibo_for(int n):
+            if n == 0:
+                return 0
+            if n == 1:
+                return 1
+            pp, p, result = 0, 1, 0
+            for i in range(2, n+1):
+                result = p + pp
+                pp = p
+                p = result
+            return result
+        ```
+* 순환함수(재귀함수) 특징
+    * 함수안에 자기 이름과 같은 함수작성
+    * ***반드시*** 돌아오는(return 구문) 코드를 작성해야함
+    * 재귀함수는 반복문으로 표현할 수도 있다.
+### 관련 문제
+1. [재귀함수가뭔가요?](https://www.acmicpc.net/problem/17478)
+2. [별찍기](https://www.acmicpc.net/problem/2447)
+3. [하노이탑](https://www.acmicpc.net/problem/11729)
+4. [팩토리얼](https://www.acmicpc.net/problem/10872)
+### 실습
+* 위의 관련된 문제중 반복문으로 풀수있는것은 반복문으로도 만들어라
+
 # 04. 트리
 # 05. 우선순위큐
 # 06. 정렬 
